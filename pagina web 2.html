@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ejemplo de opciones</title>
+  </head>
+  <body>
+    <h1>Hola po loka</h1>
+    <p>Elige una opción y haz clic en "Siguiente" para continuar:</p>
+    <form>
+      <input type="radio" id="opcion1" name="opcion" value="opcion1">
+      <label for="opcion1">Opción 1</label><br>
+      <input type="radio" id="opcion2" name="opcion" value="opcion2">
+      <label for="opcion2">Opción 2</label><br>
+      <input type="submit" value="Siguiente">
+    </form>
+    <div id="mensaje"></div>
+    <script>
+      const form = document.querySelector('form');
+      const mensaje = document.querySelector('#mensaje');
+      form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        const opcionSeleccionada = document.querySelector('input[name="opcion"]:checked').value;
+        if (opcionSeleccionada === 'opcion1') {
+          mensaje.textContent = 'Te hackee wuaja';
+        } else if (opcionSeleccionada === 'opcion2') {
+          mensaje.textContent = 'Es broma tkm carlita';
+        }
+      });
+    </script>
+  </body>
+</html>
